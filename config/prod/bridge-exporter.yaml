@@ -1,7 +1,7 @@
 template_path: bridge-exporter.yaml
 stack_name: bridge-exporter-prod
 parameters:
-  AttachmentsBucket: org-sagebridge-attachment-prod
+  AttachmentsBucket: org-gvbridge-attachment-prod
   AwsDefaultVpcId: vpc-9c70bbf9
   AwsSnsNotificationEndpoint: bridge-exporter-prod@sagebase.org
   BridgeEnv: prod
@@ -14,7 +14,7 @@ parameters:
   ExporterSqsQueueUrl: https://sqs.us-east-1.amazonaws.com/649232250620/Bridge-EX-Request-prod
   NewRelicAppName: bridge-exporter-prod
   NewRelicLicenseKey: !ssm /infra/NewRelicLicenseKey
-  RecordIdsBucket: org-sagebridge-exporter-recordids-prod
+  RecordIdsBucket: org-gvbridge-exporter-recordids-prod
   S3NotificationSqsQueueUrl: https://sqs.us-east-1.amazonaws.com/649232250620/Bridge-UploadComplete-Notification-prod
   SynapseAccessToken: !ssm /bridge-exporter-prod/SynapseAccessToken
   SynapseGetColumnModelsRateLimitPerMinute: '6'
