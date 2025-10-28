@@ -9,7 +9,7 @@ Parameters:
   AwsSnsNotificationEndpoint:
     Type: String
     Description: Email address for AWS SNS notifications
-    Default: bridge-exporter-develop@sagebase.org
+    Default: akash.shinde@avegenhealth.com
   BridgeEnv:
     Type: String
     Default: dev
@@ -18,7 +18,7 @@ Parameters:
     Default: heroku
   BridgeWorkerEmail:
     Type: String
-    Default: bridgeit+exporter@sagebase.org
+    Default: akash.shinde@avegenhealth.com
   BridgeWorkerPassword:
     Type: String
     NoEcho: true

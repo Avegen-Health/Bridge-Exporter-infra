@@ -15,7 +15,7 @@ parameters:
   NewRelicAppName: bridge-exporter-uat
   NewRelicLicenseKey: !ssm /infra/NewRelicLicenseKey
   RecordIdsBucket: org-gvbridge-exporter-recordids-devstaging
-  S3NotificationSqsQueueUrl: https://sqs.us-east-1.amazonaws.com/420786776710/Bridge-UploadComplete-Notification-staging
+  S3NotificationSqsQueueUrl: https://sqs.us-east-1.amazonaws.com/433864969993/Bridge-UploadComplete-Notification-staging
   SynapseAccessToken: !ssm /bridge-exporter-uat/SynapseAccessToken
   SynapseGetColumnModelsRateLimitPerMinute: '6'
   SynapsePrincipalId: '3327942'
