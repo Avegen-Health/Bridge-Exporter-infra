@@ -2,20 +2,20 @@ template_path: bridge-exporter.yaml
 stack_name: bridge-exporter-prod
 parameters:
   AttachmentsBucket: org-gvbridge-attachment-prod
-  AwsDefaultVpcId: vpc-9c70bbf9
+  AwsDefaultVpcId: vpc-06153fdc5047df63c
   AwsSnsNotificationEndpoint: bridge-exporter-prod@sagebase.org
   BridgeEnv: prod
   BridgeUser: heroku
-  BridgeWorkerEmail: bridgeit+exporter@sagebase.org
+  BridgeWorkerEmail: akash.shinde+exporter@avegenhealth.com
   BridgeWorkerStudy: api
   BridgeWorkerPassword: !ssm /bridge-exporter-prod/BridgeWorkerPassword
   EC2InstanceType: t3a.medium
   Env: production
-  ExporterSqsQueueUrl: https://sqs.us-east-1.amazonaws.com/649232250620/Bridge-EX-Request-prod
+  ExporterSqsQueueUrl: https://sqs.us-east-1.amazonaws.com/433864969993/Bridge-EX-Request-prod
   NewRelicAppName: bridge-exporter-prod
   NewRelicLicenseKey: !ssm /infra/NewRelicLicenseKey
   RecordIdsBucket: org-gvbridge-exporter-recordids-prod
-  S3NotificationSqsQueueUrl: https://sqs.us-east-1.amazonaws.com/649232250620/Bridge-UploadComplete-Notification-prod
+  S3NotificationSqsQueueUrl: https://sqs.us-east-1.amazonaws.com/433864969993/Bridge-UploadComplete-Notification-prod
   SynapseAccessToken: !ssm /bridge-exporter-prod/SynapseAccessToken
   SynapseGetColumnModelsRateLimitPerMinute: '6'
   SynapsePrincipalId: '3325672'
