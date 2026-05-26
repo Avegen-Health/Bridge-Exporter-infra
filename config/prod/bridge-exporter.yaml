@@ -6,7 +6,7 @@ parameters:
   AwsSnsNotificationEndpoint: bridge+prod_ops_notif@avegenhealth.com
   BridgeEnv: prod
   BridgeUser: heroku
-  BridgeWorkerEmail: bridge@avegenhealth.com
+  BridgeWorkerEmail: bridge@avegenhealth.com   # same as BootstrapAdminEmail — Bridge shares one account
   BridgeWorkerStudy: api
   BridgeWorkerPassword: !ssm /bridge-exporter-prod/BridgeWorkerPassword
   EC2InstanceType: t3a.medium
