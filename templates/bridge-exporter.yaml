@@ -206,17 +206,23 @@ Resources:
             DeleteSourceFromS3: true
             Enabled: true
             MaxAgeInDays: 90
-  AWSEBEnvironment:
-    Type: 'AWS::ElasticBeanstalk::Environment'
-    Properties:
-      ApplicationName: !Ref AWSEBApplication
-      TemplateName: !Ref AWSEBConfigurationTemplate
-      EnvironmentName: !Join
-        - '-'
-        - - !Ref 'AWS::StackName'
-      Tier:
-        Name: Worker
-        Type: SQS/HTTP
+  # VPC REBUILD — PHASE 1 (temporary): env commented out so CloudFormation terminates the
+  # existing non-VPC bridge-exporter-uat environment, freeing the name. PHASE 2 uncomments
+  # this block unchanged; the env is then recreated in the VPC (it inherits the VPC option
+  # settings from AWSEBConfigurationTemplate) under the SAME name. EB cannot migrate an
+  # existing env into a VPC in place, hence the delete-then-recreate. Revert both phases to
+  # restore the public env. KMS/IAM/deploy-bucket/log-groups are untouched by this.
+  # AWSEBEnvironment:
+  #   Type: 'AWS::ElasticBeanstalk::Environment'
+  #   Properties:
+  #     ApplicationName: !Ref AWSEBApplication
+  #     TemplateName: !Ref AWSEBConfigurationTemplate
+  #     EnvironmentName: !Join
+  #       - '-'
+  #       - - !Ref 'AWS::StackName'
+  #     Tier:
+  #       Name: Worker
+  #       Type: SQS/HTTP
   AWSS3AppDeployBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
